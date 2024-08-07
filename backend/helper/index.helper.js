@@ -83,7 +83,6 @@ export function extractSkills(text) {
     "Agile",
     "Scrum",
   ];
-
   const skills = skillsKeywords.filter((skill) =>
     text.toLowerCase().includes(skill.toLowerCase())
   );

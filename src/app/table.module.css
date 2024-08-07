@@ -1,0 +1,156 @@
+.allJobContainer {
+  padding: 30px;
+  width: 100%;
+  overflow-y: auto;
+}
+.jTable {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+.jHeader {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.jHeader input {
+  padding: 10px 20px;
+  border-radius: 30px;
+  outline: none;
+  border: 1px solid maroon;
+  width: 300px;
+  color: gray;
+  box-shadow: 0px 28px 40px -3px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0);
+}
+.jHeader span b {
+  background-color: #fff;
+  transition: all 0.3s linear;
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: 1px solid maroon;
+  border-radius: 30px;
+  color: maroon;
+  cursor: pointer;
+}
+.jHeader span b.active {
+  color: #fff;
+  background-color: maroon;
+  cursor: auto;
+  box-shadow: 0px 28px 40px -3px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0);
+}
+.jHeader h2 {
+  margin: 0px;
+  color: maroon;
+}
+
+.jThead {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: flex;
+  justify-content: space-between;
+  background-color: maroon;
+  color: #fff;
+  padding: 15px 10px;
+}
+.jThead b {
+  width: 13.5%;
+  text-transform: uppercase;
+}
+
+.jData {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.userJData {
+  background-color: #fff;
+}
+.jDataClosed {
+  background-color: #b415150f;
+}
+.jDataOpened {
+  background-color: #9cd09c24;
+}
+.jData p {
+  text-wrap: wrap;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin: 0px;
+  width: 13.5%;
+  font-size: 12.2px;
+  text-transform: capitalize;
+}
+.jData p.open {
+  color: green;
+}
+.jData p.closed {
+  color: red;
+  font-weight: bold;
+}
+
+.jData p a {
+  margin-right: 10px;
+}
+.jData p a .tableIcon {
+  padding: 4px;
+  filter: drop-shadow(1px 1px 1px rgb(186, 181, 181));
+  border-radius: 30;
+  margin-right: 10px;
+}
+
+.tableIcon1 {
+  color: rgb(33, 175, 231);
+}
+.tableIcon2 {
+  color: rgb(47, 47, 163);
+}
+.tableIcon3 {
+  color: red;
+}
+.tableIcon:hover {
+  color: gray;
+}
+
+/**********************************Responsive Code******/
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .jHeader {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .jHeader h2 {
+    display: none;
+  }
+
+  .jHeader input {
+    margin-top: 20px;
+    width: 100%;
+  }
+  .jThead {
+    width: max-content;
+  }
+  .jThead b {
+    width: 40.5%;
+    margin-right: 20px;
+    text-transform: uppercase;
+  }
+  .jData {
+    width: max-content;
+  }
+  .jData p {
+    width: fit-content;
+    margin-right: 20px;
+  }
+}

@@ -1,230 +1,366 @@
-.main {
+.jobMainContainer {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  user-select: none;
+}
+.heroImageContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+  width: 40%;
+  height: 100%;
+  padding: 50px;
+  background: linear-gradient(
+      to bottom right,
+      rgb(255 230 36 / 40%),
+      rgb(255 22 22 / 50%)
+    ),
+    url("../../public/backImage.jpg");
+  background-size: 100% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  box-shadow: 45px 10px 40px -3px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  text-transform: capitalize;
+  text-align: center;
+}
+.heading {
+  font-size: 2.8rem;
+  color: #fff;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.627));
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+.smallHeading {
+  margin-top: 2px;
+  color: #fff;
+  font-size: 1.6rem;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.627));
+}
+.image {
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.627));
+  width: 320px;
+  height: 350px;
+  top: 50px;
+}
+.listedJobsContainer {
+  width: 60%;
+  background-color: #eee;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 50px;
 }
 
-.description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  font-size: 0.85rem;
-  max-width: var(--max-width);
+.filtreCompanyContainer {
   width: 100%;
-  z-index: 2;
-  font-family: var(--font-mono);
-}
-
-.description a {
+  background-color: #eee;
+  overflow-y: scroll;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
+  flex-direction: column;
+  padding: 30px 50px;
 }
 
-.description p {
-  position: relative;
-  margin: 0;
-  padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  border-radius: var(--border-radius);
+.filtreCompanyContainer .individualListedJobCard {
+  width: 27%;
 }
-
-.code {
-  font-weight: 700;
-  font-family: var(--font-mono);
+.insideBtnIcon {
+  color: yellow;
 }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
-  max-width: 100%;
-  width: var(--max-width);
+.filtreCompanyContainer .buttonConatiner p {
+  color: maroon;
+  font-weight: bold;
 }
-
-.card {
-  padding: 1rem 1.2rem;
-  border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
-  border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
+.search {
+  width: 100%;
+  padding: 15px;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  color: #0e0e0e70;
+  box-shadow: 0px 28px 40px -3px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0);
+  margin-bottom: 20px;
 }
-
-.card span {
-  display: inline-block;
-  transition: transform 200ms;
+.jobMainContainer small {
+  text-transform: capitalize;
 }
-
-.card h2 {
-  font-weight: 600;
-  margin-bottom: 0.7rem;
-}
-
-.card p {
-  margin: 0;
-  opacity: 0.6;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  max-width: 30ch;
-  text-wrap: balance;
-}
-
-.center {
+.listedJobCardContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.individualListedJobCard {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+}
+
+.individualListedJobCard .companyName {
+  font-size: 14px;
+  margin: 0px;
+  color: maroon;
+  font-weight: bold;
+}
+.individualListedJobCard .jobTitle {
+  margin: 2px 0px;
+  margin-bottom: 5px;
+}
+.experienceContainer {
+  display: flex;
   align-items: center;
-  position: relative;
-  padding: 4rem 0;
+  align-items: center;
+  color: rgb(102, 100, 100);
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.experienceContainer span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 5px;
+  margin-bottom: 2px;
+}
+.experienceContainer span small {
+  font-size: 12px;
+  margin-left: 3px;
+}
+.reuiredSkills {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(128, 128, 128, 0.655);
+  padding: 10px 0px;
+}
+.reuiredSkills span {
+  font-size: 14px;
+  padding: 10px;
+  margin-right: 7px;
+  margin-bottom: 5px;
+  border: 1px solid maroon;
+  border-radius: 10px;
+}
+.buttonConatiner {
+  display: flex;
+  flex-direction: column;
+}
+.buttonConatiner b {
+  font-size: 16px;
+  font-weight: bolder;
+  margin-bottom: 20px;
 }
 
-.center::before {
-  background: var(--secondary-glow);
-  border-radius: 50%;
-  width: 480px;
-  height: 360px;
-  margin-left: -400px;
+.buttonConatiner button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: box-shadow 0.5s linear;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  background-color: maroon;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  box-shadow: 0px 28px 40px -3px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
 }
 
-.center::after {
-  background: var(--primary-glow);
-  width: 240px;
-  height: 180px;
-  z-index: -1;
+.buttonConatiner button:hover {
+  box-shadow: inset 0px 28px 40px -3px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+  color: #eee;
+}
+/******************************Job Details Page Style******************************/
+
+.individualJobDetailsContainer {
+  width: 60%;
+  background-color: #fff;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 50px;
+
+  text-transform: capitalize;
+  text-align: justify;
 }
 
-.center::before,
-.center::after {
-  content: "";
-  left: 50%;
-  position: absolute;
-  filter: blur(45px);
-  transform: translateZ(0);
+.detailsJobTitle {
+  margin: 2px 0px;
+  font-size: 2.4rem;
+  filter: drop-shadow(1px 1px 1px #0e0e0e94);
+}
+.detailsCompany {
+  margin: 0px;
+  font-size: 24px;
+  font-weight: bold;
+  color: maroon;
+  padding-bottom: 10px;
+}
+.jobDescription {
+  font-size: 14px;
+  margin: 0px;
 }
 
-.logo {
-  position: relative;
+.jobHeading {
+  margin-top: 10px;
 }
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
-    border: 1px solid rgba(var(--card-border-rgb), 0.15);
-  }
-
-  .card:hover span {
-    transform: translateX(4px);
-  }
+.detailsSpanContainer {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+.detailsSpanContainer span {
+  margin-bottom: 5px;
+}
+.individualJobDetailsContainer .reuiredSkills {
+  border: none;
+}
+.individualJobDetailsContainer .buttonConatiner {
+  position: fixed;
+  bottom: 20px;
+  right: 70px;
+}
+.individualJobDetailsContainer .buttonConatiner button {
+  width: 200px;
 }
 
-@media (prefers-reduced-motion) {
-  .card:hover span {
-    transform: none;
-  }
+.candidateDetailsContainer {
+  width: 100%;
+  padding: 20px 30px;
+  word-wrap: break-word;
+}
+.candidateDetailsContainer button {
+  width: 200px;
 }
 
-/* Mobile */
-@media (max-width: 700px) {
-  .content {
-    padding: 4rem;
-  }
+.candidateDetailsContainer .reuiredSkills {
+  border: none;
+}
+/******************************Form Styling**************************/
+.formContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formContainer form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.formContainer b small {
+  color: red;
+}
+.importantNote {
+  margin: 0px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.formContainer form input {
+  outline: none;
+  padding: 10px 0px;
+  width: 100%;
+  margin-bottom: 20px;
+  color: gray;
+  border: none;
+  border-bottom: 1px solid gray;
+}
 
-  .grid {
-    grid-template-columns: 1fr;
-    margin-bottom: 120px;
-    max-width: 320px;
-    text-align: center;
-  }
+.formContainer input::file-selector-button {
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: gray;
+}
+.submitButton {
+  margin-top: 20px;
+}
+.submitButton img {
+  float: right;
+}
+.submitButton button {
+  float: right;
+  transition: box-shadow 0.5s linear;
+  outline: none;
+  border: none;
+  padding: 10px 40px;
+  background-color: maroon;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  box-shadow: 0px 28px 40px -3px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
 
-  .card {
-    padding: 1rem 2.5rem;
-  }
+.submitButton button:hover {
+  box-shadow: inset 0px 28px 40px -3px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+  color: #eee;
+}
 
-  .card h2 {
-    margin-bottom: 0.5rem;
+/*******************Responsive********************/
+/* Mobile devices (smartphones) in portrait and landscape */
+@media (min-width: 320px) and (max-width: 767px) {
+  .heroImageContainer {
+    display: none;
   }
-
-  .center {
-    padding: 8rem 0 6rem;
+  .listedJobsContainer {
+    width: 100%;
   }
-
-  .center::before {
-    transform: none;
-    height: 300px;
+  .listedJobCardContainer {
+    width: 100%;
+    padding: 20px 0px;
   }
-
-  .description {
-    font-size: 0.8rem;
+  .individualListedJobCard {
+    width: 100%;
   }
-
-  .description a {
-    padding: 1rem;
+  .individualJobDetailsContainer {
+    width: 100%;
+    padding: 20px;
   }
-
-  .description p,
-  .description div {
-    display: flex;
-    justify-content: center;
+  .individualJobDetailsContainer .buttonConatiner {
     position: fixed;
+    bottom: 20px;
+    right: 100px;
+  }
+  .individualJobDetailsContainer .buttonConatiner button {
+    width: 200px;
+  }
+  .detailsJobTitle {
+    font-size: 2rem;
+  }
+  .filtreCompanyContainer {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filtreCompanyContainer .individualListedJobCard {
     width: 100%;
   }
 
-  .description p {
-    align-items: center;
-    inset: 0 0 auto;
-    padding: 2rem 1rem 1.4rem;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--background-start-rgb), 1),
-      rgba(var(--callout-rgb), 0.5)
-    );
-    background-clip: padding-box;
-    backdrop-filter: blur(24px);
+  .candidateDetailsContainer {
+    width: 60%;
+    padding: 20px 30px;
   }
-
-  .description div {
-    align-items: flex-end;
-    pointer-events: none;
-    inset: auto 0 0;
-    padding: 2rem;
-    height: 200px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
-    );
-    z-index: 1;
-  }
-}
-
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(2, 50%);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-
-  .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
+  .candidateDetailsContainer h3 {
+    font-size: 1.5rem;
   }
 }

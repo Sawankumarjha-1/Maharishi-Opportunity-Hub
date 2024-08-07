@@ -12,10 +12,19 @@ const JobDesriptionSchema = new mongoose.Schema(
     salary: { type: String, required: true },
     joining: { type: String, required: true },
     description: { type: String, required: true },
+    postedDate: {
+      type: Date,
+      default: Date.now,
+    },
+    status: {
+      type: String,
+      enum: ["OPEN", "CLOSED", "PENDING"],
+      default: "OPEN",
+    },
   },
   { timestamps: true }
 );
 export const JobDescriptionModel = mongoose.model(
-  "job-descriptios",
+  "job-descriptions",
   JobDesriptionSchema
 );

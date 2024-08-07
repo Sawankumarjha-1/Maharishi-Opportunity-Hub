@@ -1,0 +1,385 @@
+.credentialFormContainer {
+  user-select: none;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+      to bottom right,
+      rgb(255 230 36 / 40%),
+      rgb(255 22 22 / 50%)
+    ),
+    url("../../public/backImage.jpg");
+  background-size: 100% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.loginForm {
+  background-color: #fff;
+  width: 23%;
+  border-radius: 2px;
+  box-shadow: 0px 28px 40px -3px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  padding: 30px;
+}
+.loginForm img {
+  width: 100%;
+  height: 90px;
+  margin-bottom: 10px;
+}
+.loginForm h2 {
+  margin: 0px;
+  font-size: 1.3rem;
+  margin-bottom: 2px;
+}
+.loginForm p {
+  margin: 0px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+.loginForm .error {
+  color: red;
+}
+.loginForm input {
+  outline: none;
+  padding: 10px 0px;
+  width: 100%;
+  margin-bottom: 20px;
+  color: gray;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.loginSubmitButton {
+  margin-top: 20px;
+}
+.loginSubmitButton img {
+  float: right;
+  width: 50px;
+  height: 50px;
+}
+.loginSubmitButton button {
+  float: right;
+  transition: box-shadow 0.5s linear;
+  outline: none;
+  border: none;
+  padding: 10px 40px;
+  background-color: maroon;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  box-shadow: 0px 28px 40px -3px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.loginSubmitButton button:hover {
+  box-shadow: inset 0px 28px 40px -3px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+  color: #eee;
+}
+/**************************Dashboard*******************************/
+.dashboard {
+  background-color: #eee;
+  overflow: hidden;
+  user-select: none;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.dashboardNavbar {
+  width: max-content;
+  transition: all 3s linear;
+  position: relative;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: maroon;
+  box-shadow: 45px 10px 40px -3px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.activeLink {
+  color: yellow;
+}
+.imageSpan {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #fff;
+  max-width: max-content;
+}
+.imageSpan img {
+  animation: rotation 2s infinite linear;
+  width: 45px;
+  height: 50px;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.8));
+  /* margin-right: 20px; */
+  cursor: pointer;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.imageSpan p {
+  color: #eee;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.8));
+  font-size: 19px;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+.dashboardNavbar span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.dashboardNavbar span a {
+  transition: all 0.3s linear;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+.dashboardNavbar span a p {
+  margin-left: 20px;
+}
+.dashboardNavbar span a .icon {
+  color: maroon;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.dashboardNavbar span a:hover {
+  color: yellow;
+}
+
+.logoutContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.logoutContainerIcons {
+  transition: all 0.3s linear;
+  padding: 5px;
+  box-shadow: 0px 28px 40px -3px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  background-color: maroon;
+  color: #fff;
+}
+.logoutContainerIcons:first-child {
+  margin-right: 10px;
+}
+.logoutContainerIcons:hover {
+  cursor: pointer;
+  box-shadow: inset 0px 28px 40px -3px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0);
+  color: #000;
+}
+/*********Dashboard Content Container******************************/
+.dashboardContentContainer {
+  width: 100%;
+  padding: 20px 30px;
+}
+.dashboardLeft {
+  width: 100%;
+}
+.dashboardHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-shadow: 1px 1px 1px #8b6e6e80;
+}
+.dashboardHeader p {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  font-weight: bold;
+}
+
+.calender {
+  color: maroon;
+  margin-right: 5px;
+}
+
+.dashboardAnalytics {
+  display: flex;
+  flex-direction: row;
+}
+.dashboardAnalyticsInner {
+  margin-right: 30px;
+  width: 30%;
+  background-color: #fff;
+  box-shadow: 0px 28px 40px -3px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+.analyticIconContainer {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.analyticIcon {
+  color: maroon;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: #eee;
+}
+.analyticContent {
+  width: 70%;
+  padding: 10px;
+  text-transform: capitalize;
+}
+.analyticContent p {
+  margin: 0px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.analyticContent b {
+  font-size: 2rem;
+}
+
+.dashboardRight {
+  width: 28%;
+}
+.createPostContainer {
+  width: 100%;
+  padding: 20px 30px;
+  overflow-y: auto;
+}
+.createPostHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 10vh;
+  justify-content: space-between;
+  text-shadow: 1px 1px 1px #8b6e6e80;
+  border-bottom: 1px solid gray;
+}
+.createPostHeader p {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.createJobPostForm {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+.createJobPostForm input {
+  min-width: 14%;
+  max-width: fit-content;
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.createJobPostForm textarea {
+  width: 100vw;
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  margin-bottom: 10px;
+  height: 12vh;
+  background-color: #fff;
+  resize: none;
+}
+.createJobPostForm b {
+  width: 100vw;
+  margin-bottom: 15px;
+}
+.createJobPostForm .error {
+  color: red;
+}
+.createJobPostForm .required {
+  color: green;
+}
+.createJobPostForm .loginSubmitButton {
+  width: 100vw;
+}
+.createJobPostForm .loginSubmitButton button {
+  margin-right: 10px;
+}
+/**************************Responsive Code*************************/
+@media (min-width: 320px) and (max-width: 767px) {
+  .loginForm {
+    width: 80%;
+  }
+  .dashboardContentContainer {
+    width: 100%;
+    padding: 10px;
+  }
+  .dashboardHeader p {
+    display: none;
+  }
+  .dashboardHeader h1 {
+    font-size: 1.5rem;
+  }
+
+  .dashboardAnalytics {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .dashboardAnalyticsInner {
+    margin-right: 0px;
+    margin-bottom: 20px;
+    width: 93%;
+  }
+
+  .imageSpan p {
+    color: #eee;
+    font-size: 14px;
+  }
+  .imageSpan {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+  }
+
+  .dashboardNavbar span a {
+    font-size: 12px;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+  }
+  .createPostContainer {
+    padding: 10px 0px;
+  }
+  .createPostHeader {
+    display: none;
+  }
+}

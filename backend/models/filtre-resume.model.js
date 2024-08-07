@@ -8,12 +8,11 @@ const FiltreSchema = new mongoose.Schema(
     linkedin: { type: String },
     education: { type: String },
     skills: { type: String },
-    workAt: { type: String },
     experience: { type: String, required: true },
-    dob: { type: String },
+    resumeLink: { type: String, required: true },
     jobId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "job-descriptios",
+      ref: "job-descriptions",
     },
   },
 
