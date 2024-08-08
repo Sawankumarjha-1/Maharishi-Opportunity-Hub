@@ -123,7 +123,7 @@ function DashboardNavbar() {
                 pathname === "/dashboard/filter-candidates" && styles.activeLink
               }`}
             >
-              Candidates
+              Filtered Candidates
             </p>
           )}
         </Link>

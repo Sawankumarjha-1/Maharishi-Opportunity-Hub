@@ -106,14 +106,14 @@ export default function FilterCandidates() {
                         router.push(`/dashboard/filter-candidates/${data._id}`);
                       }}
                     >
-                      Total Applied Candiddates : {data?.candidates.length}{" "}
+                      Total Filtered Candidates : {data?.candidates.length}{" "}
                       <MdOutlineArrowRightAlt
                         size={20}
                         className={styles.insideBtnIcon}
                       />
                     </button>
                   ) : (
-                    <p>Total Applied Candiddates : 0</p>
+                    <p>Total Filtered Candidates : 0</p>
                   )}
                 </div>
               </div>
