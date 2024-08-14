@@ -34,10 +34,18 @@ export function checkRequiredHeadings(resume) {
   const Experience = [
     "Work Experience",
     "Experience",
+    "Internship",
+    "Experiences",
+    "Internships",
     "Professional Experience",
     "Employment History",
   ];
-  const Education = ["Education", "Academic Background", "Qualifications"];
+  const Education = [
+    "Education",
+    "Academic Background",
+    "Qualifications",
+    "Educational Qualification",
+  ];
   const Skills = ["Skills", "Key Skills", "Competencies", "Technical Skills"];
   const Projects = [
     "Projects",
@@ -50,6 +58,7 @@ export function checkRequiredHeadings(resume) {
     "Certification",
     "Certifications and Licenses",
     "Credentials",
+    "CERTIFICATIONS and Courses",
   ];
   const hasExperienceHeading = Experience.some((item) => {
     return resume.toLowerCase().includes(item.toLowerCase());

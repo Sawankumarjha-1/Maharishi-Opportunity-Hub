@@ -20,12 +20,12 @@ export function extractPhone(text) {
 export function extractLinkedInLinks(text) {
   const linkedinPattern =
     /https?:\/\/(www\.)?linkedin\.com\/in\/[a-zA-Z0-9_-]+/gi;
-  return text.match(linkedinPattern)[0] || [];
+  return text.match(linkedinPattern)?.[0] || "";
 }
 export function extractWorkExperience(text) {
   const workExperiencePattern =
     /(?:\bexperience\b|\bworked\b|\bjob\b|\binternship\b)[^\.]*\./gi;
-  return text.match(workExperiencePattern) || [];
+  return text.match(workExperiencePattern) || "";
 }
 export function extractEducation(text) {
   const educationKeywords = [
