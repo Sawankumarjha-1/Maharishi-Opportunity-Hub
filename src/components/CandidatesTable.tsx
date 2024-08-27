@@ -4,7 +4,13 @@ import { FiEye, FiTrash } from "react-icons/fi";
 import styles from "../app/table.module.css";
 import axios from "axios";
 import { candidates } from "@/types/index.types";
-import { FaLinkedin, FaRegFilePdf } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaEnvelopeOpen,
+  FaLinkedin,
+  FaRegEnvelope,
+  FaRegFilePdf,
+} from "react-icons/fa";
 
 function CandidatesTable({
   filtreData,
@@ -98,11 +104,18 @@ function CandidatesTable({
                   <Link href={data.linkedin} target="_blank" title="linkedin">
                     <FaLinkedin size={25} color="blue" />
                   </Link>
-                  <Link href={data.linkedin} target="_blank" title="resume">
+                  <Link href={data.resumeLink} target="_blank" title="resume">
                     <FaRegFilePdf size={25} color="red" />
                   </Link>
                 </p>{" "}
                 <p>
+                  <Link href={"mailto:" + data.email}>
+                    {" "}
+                    <FaRegEnvelope
+                      size={20}
+                      className={`${styles.tableIcon3} ${styles.tableIcon}`}
+                    />
+                  </Link>
                   <Link href={"/dashboard/filter-candidates/view/" + data._id}>
                     <FiEye
                       size={20}

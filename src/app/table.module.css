@@ -105,8 +105,6 @@
 }
 .jData p a .tableIcon {
   padding: 4px;
-  filter: drop-shadow(1px 1px 1px rgb(186, 181, 181));
-  border-radius: 30;
   margin-right: 10px;
 }
 
@@ -117,7 +115,7 @@
   color: rgb(47, 47, 163);
 }
 .tableIcon3 {
-  color: red;
+  color: rgb(157, 25, 25);
 }
 .tableIcon:hover {
   color: gray;

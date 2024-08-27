@@ -9,6 +9,7 @@ import { verifyJWT } from "./middlewares/auth.middleware.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import { uploadOnCloudinary } from "./helper/cloudinary.helper.js";
+import fs from "fs";
 
 import {
   extractDOB,
@@ -456,33 +457,39 @@ app.post(
       }
 
       if (parseInt(experience) < jobData.experience) {
+        fs.unlinkSync(fdata.path);
         return res
           .status(200)
           .json({ status: 200, success: true, message: "success" });
       }
       if (!hasRequiredEducation(actualData, jobData.minimumEducation)) {
+        fs.unlinkSync(fdata.path);
         return res
           .status(200)
           .json({ status: 200, success: true, message: "success" });
       }
       if (!hasSkills(actualData, jobData.skills)) {
+        fs.unlinkSync(fdata.path);
         return res
           .status(200)
           .json({ status: 200, success: true, message: "success" });
       }
       if (!hasEmail(actualData)) {
+        fs.unlinkSync(fdata.path);
         return res
           .status(200)
           .json({ status: 200, success: true, message: "success" });
       }
 
       if (!hasPhoneno(actualData)) {
+        fs.unlinkSync(fdata.path);
         return res
           .status(200)
           .json({ status: 200, success: true, message: "success" });
       }
 
       if (!checkRequiredHeadings(actualData)) {
+        fs.unlinkSync(fdata.path);
         return res
           .status(200)
           .json({ status: 200, success: true, message: "success" });
