@@ -19,8 +19,14 @@ export function extractPhone(text) {
 
 export function extractLinkedInLinks(text) {
   const linkedinPattern =
-    /https?:\/\/(www\.)?linkedin\.com\/in\/[a-zA-Z0-9_-]+/gi;
+    /(?:https?:\/\/)?(?:www\.)?linkedin\.com\/in\/[a-zA-Z0-9-_/]+/gi;
   return text.match(linkedinPattern)?.[0] || "";
+}
+
+export function extractGithub(text) {
+  const githubRegex =
+    /(?:https?:\/\/)?(?:www\.)?github\.com\/[a-zA-Z0-9-_/]+/gi;
+  return text.match(githubRegex)?.[0] || "";
 }
 export function extractWorkExperience(text) {
   const workExperiencePattern =

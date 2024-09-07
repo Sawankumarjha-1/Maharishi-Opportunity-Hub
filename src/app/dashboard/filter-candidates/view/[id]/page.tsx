@@ -31,6 +31,14 @@ function ParticularCandidate() {
         <span>
           <b>Phone no : </b> {data?.phone}
         </span>{" "}
+        {data?.github && (
+          <span>
+            <b>Github : </b> {data?.github}
+          </span>
+        )}
+        <span>
+          <b>Linkedin : </b> {data?.linkedin}
+        </span>
         <span>
           <b>Education : </b> {data?.education}
         </span>{" "}
@@ -41,14 +49,12 @@ function ParticularCandidate() {
           <b>Applied Date : </b> {data?.updatedAt.substring(0, 10)}
         </span>{" "}
         <span>
-          <b>Linkedin : </b>{" "}
-          <Link href={data?.linkedin || ""}>{data?.linkedin}</Link>
-        </span>
-        <span>
           <b>Resume : </b>{" "}
-          <Link href={data?.resumeLink || ""}>{data?.resumeLink}</Link>
+          <Link href={data?.resumeLink || ""} download={true}>
+            {data?.resumeLink}
+          </Link>
         </span>{" "}
-        <b className={styles.jobHeading}>Required Skills :</b>
+        <b className={styles.jobHeading}>Skills :</b>
         <div className={styles.reuiredSkills}>
           {data?.skills
             .trim()
@@ -58,6 +64,7 @@ function ParticularCandidate() {
             })}
         </div>
       </div>
+
       <div className={styles.buttonConatiner}>
         <button type="button" onClick={() => window.history.back()}>
           Go Back

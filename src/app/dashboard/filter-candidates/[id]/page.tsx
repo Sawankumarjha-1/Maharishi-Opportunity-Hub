@@ -20,10 +20,9 @@ function ViewJobPost() {
     "sno",
     "name",
     "email",
-
     "Education",
     "skills",
-    "linkedin | RESUME",
+    "Resume",
     "Actions",
   ];
   useEffect(() => {

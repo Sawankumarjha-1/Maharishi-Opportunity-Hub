@@ -24,6 +24,8 @@ export type candidates = {
   phone: string;
   resumeLink: string;
   skills: string;
+
+  github?: string;
 };
 export type JobAndCandidate = {
   _id: string;

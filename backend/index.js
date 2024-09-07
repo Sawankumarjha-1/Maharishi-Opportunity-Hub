@@ -4,7 +4,10 @@ import { DBConnection } from "./db/index.js";
 import { upload } from "./middlewares/multer.middleware.js";
 import { FiltreResumeModel } from "./models/filtre-resume.model.js";
 import { PdfDataParser } from "pdf-data-parser";
-import { generateAccessAndRefereshTokens } from "./helper/index.helper.js";
+import {
+  extractGithub,
+  generateAccessAndRefereshTokens,
+} from "./helper/index.helper.js";
 import { verifyJWT } from "./middlewares/auth.middleware.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -437,6 +440,7 @@ app.post(
       }
 
       const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
       if (!emailPattern.test(email)) {
         return res.status(401).json({ error: "invalid email id" });
       }
@@ -449,9 +453,7 @@ app.post(
       if (!isResume(actualData)) {
         return res.status(401).json({ status: 401, error: "Not Resume PDF !" });
       }
-
       const jobData = await JobDescriptionModel.findById(jobId);
-
       if (!jobData) {
         return res.status(401).json({ error: "Job Post does not exits!" });
       }
@@ -462,6 +464,17 @@ app.post(
           .status(200)
           .json({ status: 200, success: true, message: "success" });
       }
+
+      if (
+        extractName(actualData).toLowerCase() !== name.toLowerCase() ||
+        extractEmail(actualData).toLowerCase() !== email.toLowerCase()
+      ) {
+        fs.unlinkSync(fdata.path);
+        return res
+          .status(200)
+          .json({ status: 200, success: true, message: "success" });
+      }
+
       if (!hasRequiredEducation(actualData, jobData.minimumEducation)) {
         fs.unlinkSync(fdata.path);
         return res
@@ -515,9 +528,11 @@ app.post(
         phone: extractPhone(actualData),
         education: extractEducation(actualData).join(" | "),
         linkedin: extractLinkedInLinks(actualData),
+        github: extractGithub(actualData),
         skills: extractSkills(actualData).join(" | "),
         resumeLink: imagLink.url,
         experience: experience,
+
         jobId,
       };
 

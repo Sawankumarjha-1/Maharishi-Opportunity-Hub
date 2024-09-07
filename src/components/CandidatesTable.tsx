@@ -99,11 +99,8 @@ function CandidatesTable({
                 <p>{data.name}</p>
                 <p>{data.email}</p>
                 <p>{data.education}</p>
-                <p>{data.skills.substring(0, 30) + "..."}</p>
+                <p>{data.skills.substring(0, 20) + "..."}</p>
                 <p>
-                  <Link href={data.linkedin} target="_blank" title="linkedin">
-                    <FaLinkedin size={25} color="blue" />
-                  </Link>
                   <Link href={data.resumeLink} target="_blank" title="resume">
                     <FaRegFilePdf size={25} color="red" />
                   </Link>

@@ -9,7 +9,9 @@ const FiltreSchema = new mongoose.Schema(
     education: { type: String },
     skills: { type: String },
     experience: { type: String, required: true },
+    github: { type: String },
     resumeLink: { type: String, required: true },
+
     jobId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "job-descriptions",
