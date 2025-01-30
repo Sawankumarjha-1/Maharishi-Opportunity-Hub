@@ -49,7 +49,7 @@ export default function Home() {
       />
 
       <small>
-        All Available Oppurtunity <b> {allJobPosts.length}</b>
+        All Available Oppurtunity <b> {filtrePost.length}</b>
       </small>
 
       <div className={styles.listedJobCardContainer}>
